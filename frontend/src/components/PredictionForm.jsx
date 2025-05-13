@@ -41,16 +41,16 @@ export default function PredictionForm() {
     };
 
     const inputFields = [
-        { name: "config_id", label: "Enter the Patient Id", placeholder: "e.g. PA-001" },
-        { name: "patientName", label: "Enter the Patient Name", placeholder: "e.g. Kabeer" },
-        { name: "pregnancies", label: "Number of Pregnancies", placeholder: "e.g. 2" },
-        { name: "glucose", label: "Glucose Level", placeholder: "e.g. 120" },
-        { name: "bloodPressure", label: "Blood Pressure", placeholder: "e.g. 80" },
-        { name: "skinThickness", label: "Skin Thickness", placeholder: "e.g. 20" },
-        { name: "insulin", label: "Insulin Level", placeholder: "e.g. 85" },
-        { name: "bmi", label: "BMI", placeholder: "e.g. 30.5" },
-        { name: "dpf", label: "Diabetes Pedigree Function", placeholder: "e.g. 0.5" },
-        { name: "age", label: "Age", placeholder: "e.g. 35" }
+        { name: "config_id", label: "Enter the Patient Id", placeholder: "e.g. PA-0XX" },
+        { name: "patientName", label: "Enter the Patient Name", placeholder: "e.g. Shaik Kabeer" },
+        { name: "pregnancies", label: "Number of Pregnancies", placeholder: "Range: 0 - 20" },
+        { name: "glucose", label: "Glucose Level (mg/dL)", placeholder: "Range: 70 - 200" },
+        { name: "bloodPressure", label: "Blood Pressure - Diastolic (mm Hg)", placeholder: "Range: 60 - 140" },
+        { name: "skinThickness", label: "Skin Thickness (mm)", placeholder: "Range: 0 - 100" },
+        { name: "insulin", label: "Insulin Level (μU/mL)", placeholder: "Range: 0 - 850" },
+        { name: "bmi", label: "BMI (kg/m²)", placeholder: "Range: 15.0 - 50.0" },
+        { name: "dpf", label: "Diabetes Pedigree Function (Inherited)", placeholder: "Range: 0.0 - 2.5" },
+        { name: "age", label: "Age (years)", placeholder: "Range: 10 - 100" }
     ];
     const [showResult, setShowResult] = useState(false);
 

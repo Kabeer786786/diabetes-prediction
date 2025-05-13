@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/497620571649005844/4bcc5114b075482a96fa1e58ec3a1495/artifacts
+end_time: 1747161593797
+entry_point_name: ''
+experiment_id: '497620571649005844'
+lifecycle_stage: active
+run_id: 4bcc5114b075482a96fa1e58ec3a1495
+run_name: enchanting-duck-452
+run_uuid: 4bcc5114b075482a96fa1e58ec3a1495
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747161585840
+status: 3
+tags: []
+user_id: shaik

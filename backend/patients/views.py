@@ -5,9 +5,13 @@ from rest_framework import status
 from .models import Patients
 from .serializers import PatientSerializer
 import os
-import joblib
+import mlflow
+import pandas as pd
 
-model = joblib.load("diabetes_prediction.pkl")
+mlflow.set_tracking_uri("http://localhost:5000")
+# Load the MLflow model
+model_uri = "models:/Diabetes-Prediction@challenger"  # Adjust this path to your model's location
+model = mlflow.pyfunc.load_model(model_uri)
 
 
 def home(request):
@@ -32,7 +36,9 @@ def create_patient(request):
                 data["age"],
             ]
         ]
-        prediction = model.predict(features)[0]
+        sample_df = pd.DataFrame(features, columns=['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 
+                                               'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age'])
+        prediction = model.predict(sample_df)[0]
         patient = serializer.save(result=prediction)
         PatientSerializer(patient).data
         return Response(prediction, status=status.HTTP_201_CREATED)
