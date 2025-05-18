@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1747207331522
+current_stage: None
+description: ''
+last_updated_timestamp: 1747207331522
+name: Diabetes-Prediction-Logistic
+run_id: a641e990753e4d9b88c75d5e898f86a1
+run_link: ''
+source: mlflow-artifacts:/497620571649005844/a641e990753e4d9b88c75d5e898f86a1/artifacts/logistic_regression_model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/497620571649005844/a641e990753e4d9b88c75d5e898f86a1/artifacts/logistic_regression_model
+user_id: null
+version: 1

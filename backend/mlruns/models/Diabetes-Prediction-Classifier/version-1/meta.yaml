@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1747204227919
+current_stage: None
+description: ''
+last_updated_timestamp: 1747204227919
+name: Diabetes-Prediction-Classifier
+run_id: 7066efbbbece48f8aa06dc8356597342
+run_link: ''
+source: mlflow-artifacts:/497620571649005844/7066efbbbece48f8aa06dc8356597342/artifacts/diabetes_classifier_model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/497620571649005844/7066efbbbece48f8aa06dc8356597342/artifacts/diabetes_classifier_model
+user_id: null
+version: 1

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/497620571649005844/8e2afcc7a2ba4e089f784972dc651573/artifacts
+end_time: 1747205287084
+entry_point_name: ''
+experiment_id: '497620571649005844'
+lifecycle_stage: active
+run_id: 8e2afcc7a2ba4e089f784972dc651573
+run_name: Random Forest Regressor
+run_uuid: 8e2afcc7a2ba4e089f784972dc651573
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747205282660
+status: 3
+tags: []
+user_id: shaik

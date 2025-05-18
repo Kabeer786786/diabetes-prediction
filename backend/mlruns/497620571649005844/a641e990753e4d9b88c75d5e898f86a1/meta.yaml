@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/497620571649005844/a641e990753e4d9b88c75d5e898f86a1/artifacts
+deleted_time: 1747207409842
+end_time: 1747207331542
+entry_point_name: ''
+experiment_id: '497620571649005844'
+lifecycle_stage: deleted
+run_id: a641e990753e4d9b88c75d5e898f86a1
+run_name: Logistic Regression Classifier
+run_uuid: a641e990753e4d9b88c75d5e898f86a1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747207327137
+status: 3
+tags: []
+user_id: shaik

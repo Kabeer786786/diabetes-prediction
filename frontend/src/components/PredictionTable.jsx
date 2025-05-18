@@ -28,19 +28,19 @@ const PredictionTable = () => {
         setTimeout(() => {
             setCurrentPage(page);
             setLoading(false);
-        }, 250);
+        }, 200);
     };
 
     return (
-        <div className="relative p-6 pt-4 w-fit">
+        <div className="p-6 pt-4 w-fit">
             {/* Blur and loader overlay */}
-            {loading && (
-                <div className="absolute inset-0 z-10 flex items-center justify-center backdrop-blur bg-white/30 rounded-2xl">
-                    <div className="w-10 h-10 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
-                </div>
-            )}
 
-            <div className={`w-fit overflow-hidden rounded-2xl shadow-lg bg-white transition duration-300 ${loading ? 'blur-sm' : ''}`}>
+            <div className={`w-fit overflow-hidden rounded-2xl shadow-lg bg-white transition duration-100 ${loading ? 'blur-xs' : ''}`}>
+                {/* {loading && (
+                    <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/30 rounded-2xl">
+                        <div className="w-10 h-10 border-4 border-purple-600 border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                )} */}
                 <table className="text-sm text-left text-gray-700">
                     <thead className="bg-purple-600 text-white rounded-t-xl">
                         <tr>

@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1747205287063
+current_stage: None
+description: ''
+last_updated_timestamp: 1747205287063
+name: Diabetes-Prediction-Regressor
+run_id: 8e2afcc7a2ba4e089f784972dc651573
+run_link: ''
+source: mlflow-artifacts:/497620571649005844/8e2afcc7a2ba4e089f784972dc651573/artifacts/diabetes_regressor_model
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/497620571649005844/8e2afcc7a2ba4e089f784972dc651573/artifacts/diabetes_regressor_model
+user_id: null
+version: 2

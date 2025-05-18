@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/497620571649005844/d139d1d42a39445eb5d7346636e43478/artifacts
+end_time: 1747207392362
+entry_point_name: ''
+experiment_id: '497620571649005844'
+lifecycle_stage: active
+run_id: d139d1d42a39445eb5d7346636e43478
+run_name: Logistic Regression Classifier
+run_uuid: d139d1d42a39445eb5d7346636e43478
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747207388131
+status: 3
+tags: []
+user_id: shaik

@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/497620571649005844/7066efbbbece48f8aa06dc8356597342/artifacts
+deleted_time: 1747205555573
+end_time: 1747204227950
+entry_point_name: ''
+experiment_id: '497620571649005844'
+lifecycle_stage: deleted
+run_id: 7066efbbbece48f8aa06dc8356597342
+run_name: Random Forest Classifier
+run_uuid: 7066efbbbece48f8aa06dc8356597342
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747204221428
+status: 3
+tags: []
+user_id: shaik

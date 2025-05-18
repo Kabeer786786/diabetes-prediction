@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -34,7 +35,7 @@ export default function PredictionForm() {
 
         try {
             const response = await axios.post("http://127.0.0.1:8000/patients/create/", formData);
-            setPrediction(response.data);
+            setPrediction(response.data.prediction);
         } catch (error) {
             console.error("Prediction error:", error);
         }

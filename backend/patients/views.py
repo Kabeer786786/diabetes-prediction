@@ -6,16 +6,49 @@ from .models import Patients
 from .serializers import PatientSerializer
 import os
 import mlflow
+import mlflow.pyfunc
 import pandas as pd
+from django.core.cache import cache
 
 mlflow.set_tracking_uri("http://localhost:5000")
-# Load the MLflow model
-model_uri = "models:/Diabetes-Prediction@challenger"  # Adjust this path to your model's location
-model = mlflow.pyfunc.load_model(model_uri)
+
+RFC_model = mlflow.pyfunc.load_model("models:/Diabetes-Prediction-Classifier@challenger")
+RFR_model = mlflow.pyfunc.load_model("models:/Diabetes-Prediction-Regressor@challenger")
+LRC_model = mlflow.pyfunc.load_model("models:/Diabetes-Prediction-Logistic@challenger")
+
+MODEL_MAP = {
+    "RFC": RFC_model,
+    "RFR": RFR_model,
+    "LRC": LRC_model,
+}
+model = RFC_model
+model_code = "RFC"
 
 
-def home(request):
-    return HttpResponse("Hello, World!")
+@api_view(["POST"])
+def load_model(request):
+    global model_code
+    model_code = request.data.get("modelName")
+
+    if model_code not in MODEL_MAP:
+        return Response(
+            {"error": "Invalid model name. Choose one of: RFC, RFR, LRC"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    try:
+        global model
+        model = MODEL_MAP[model_code]
+        print(model_code)
+    except Exception as e:
+        return Response(
+            {"error": f"Failed to load model: {str(e)}"},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        )
+    return Response(
+        {"message": f"Model set to {model_code} successfully."},
+        status=status.HTTP_200_OK,
+    )
 
 
 # ➤ CREATE
@@ -36,13 +69,28 @@ def create_patient(request):
                 data["age"],
             ]
         ]
-        sample_df = pd.DataFrame(features, columns=['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 
-                                               'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age'])
+        sample_df = pd.DataFrame(
+            features,
+            columns=[
+                "Pregnancies",
+                "Glucose",
+                "BloodPressure",
+                "SkinThickness",
+                "Insulin",
+                "BMI",
+                "DiabetesPedigreeFunction",
+                "Age",
+            ],
+        )
+        global model
         prediction = model.predict(sample_df)[0]
-        patient = serializer.save(result=prediction)
-        PatientSerializer(patient).data
-        return Response(prediction, status=status.HTTP_201_CREATED)
-    print(serializer.errors)
+        global model_code
+        if model_code == "RFR":
+            prediction = round(prediction)
+
+        serializer.save(result=prediction)
+        return Response({"prediction": prediction}, status=status.HTTP_201_CREATED)
+
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -90,3 +138,7 @@ def delete_patient(request, pk):
 
     patient.delete()
     return Response({"message": "Patient deleted"}, status=status.HTTP_204_NO_CONTENT)
+
+
+def home(request):
+    return HttpResponse("Hello, World!")
