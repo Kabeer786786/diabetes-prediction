@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+*.env
+.venv/
+venv/
+ENV/
+env/
+pip-log.txt
+
+# Django
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
+
+# Logs
+*.log
+logs/
+
+# VSCode / IDEs
+.vscode/
+.idea/
+*.swp
+
+# MacOS / Windows / Linux
+.DS_Store
+Thumbs.db
+
+# Node (optional, if using React or npm tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# ffmpeg converted files (optional cleanup)
+*.wav
+*.webm
+
+# Whisper cache (if applicable)
+whisper_cache/
+
+# MLflow (if used)
+mlruns/

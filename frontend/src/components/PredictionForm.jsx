@@ -26,10 +26,6 @@ export default function PredictionForm() {
         setErrors({ ...errors, [e.target.name]: "" });
     };
 
-    const validateForm = () => {
-
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
